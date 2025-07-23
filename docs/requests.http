@@ -1,14 +1,25 @@
 @url= http://localhost:8080/api/v1
+
+GET {{url}}/opening/4
+Content-Type: application/json
+
+###
+
+GET {{url}}/opening
+Content-Type: application/json
+
+###
+
 POST {{url}}/opening
 Content-Type: application/json
 
 {
-    "role": "Staff sw engineer",
+    "role": "Jr sw engineer",
     "company": "ultrasoft",
     "location": "new york",
     "remote": true,
     "link": "vaga.com/vagapica",
-    "salary": 1000000
+    "salary": 100000
 }
 
 ###
