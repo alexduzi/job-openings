@@ -12,3 +12,6 @@ Content-Type: application/json
 }
 
 ###
+
+DELETE {{url}}/opening/2
+Content-Type: application/json
