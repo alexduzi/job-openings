@@ -23,6 +23,14 @@ Content-Type: application/json
 }
 
 ###
+PUT {{url}}/opening/7
+Content-Type: application/json
+
+{
+    "role": "Jr sw engineer updated 3"
+}
+
+###
 
 DELETE {{url}}/opening/2
 Content-Type: application/json

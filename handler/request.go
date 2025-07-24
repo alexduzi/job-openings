@@ -1,6 +1,10 @@
 package handler
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/alexduzi/job-openings/model"
+)
 
 func errParamIsRequired(name, typ string) error {
 	return fmt.Errorf("param: %s (type: %s) is required", name, typ)
@@ -38,4 +42,22 @@ func (c *CreateOpeningRequest) Validate() error {
 		return errParamIsRequired("salary", "int64")
 	}
 	return nil
+}
+
+func (c *CreateOpeningRequest) Merge(op *model.Opening) {
+	if c.Role != "" && (c.Role != op.Role) {
+		op.Role = c.Role
+	}
+	if c.Company != "" && (c.Company != op.Company) {
+		op.Company = c.Company
+	}
+	if c.Location != "" && (c.Location != op.Location) {
+		op.Location = c.Location
+	}
+	if c.Link != "" && (c.Link != op.Link) {
+		op.Link = c.Link
+	}
+	if c.Remote != nil {
+		op.Remote = *c.Remote
+	}
 }
